@@ -49,6 +49,14 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
+  assets:
+    - images/booh.jpg
+    - images/marioBackground.jpg
+    - images/pacMan.png
+    - images/segaBackground.jpg
+    - images/atariBackground.jpg
+    - images/nintendoBackground.jpg
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
@@ -74,3 +82,8 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+  fonts:
+    - family: Acme
+      fonts:
+        - asset: fonts/Acme-Regular.ttf
