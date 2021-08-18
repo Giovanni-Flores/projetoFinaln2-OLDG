@@ -1,10 +1,13 @@
-import 'package:flutter/material.dart';
 import 'dart:async';
-import 'Option.dart';
-void main()  => runApp(MaterialApp (
-  home: HomeScreen(),
-  ));
+import 'package:flutter/material.dart';
+import 'IniciaApp.dart';
 
+//Tela inicial cuja função é apenas carregar o app
+// e logo após direcionar para outra tela onde o Firebase será inicializado
+
+void main() => runApp(MaterialApp(
+  home: HomeScreen(),
+));
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -21,26 +24,28 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
 
     Timer(Duration(seconds:3),(){
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context)=>Option(),
-          ));
+      IniciaApp();
     });
   }
 
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
       home: Scaffold(
         body: Container(
-          child: Column(
-            children: <Widget>[
-              Image.asset("images/booh.jpg"),
-            ],
+          width: double.infinity,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("images/booh.jpg"),
+              fit: BoxFit.cover,
+            ),
           ),
         ),
       ),
     );
   }
 }
+
+
+

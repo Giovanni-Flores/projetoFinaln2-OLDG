@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//Tela de Conteudo SEGA
 class Sega extends StatelessWidget {
   const Sega({Key? key}) : super(key: key);
 

@@ -1,11 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:projectfinal_old/TelasAuth/auth_services.dart';
+import 'package:provider/provider.dart';
 import 'Sega.dart';
 import 'Atari.dart';
 import 'Nintendo.dart';
 
-class Option extends StatelessWidget {
-  const Option({Key? key}) : super(key: key);
+//Tela de Conteudo OPÇÃO (opcao)
+class Opcao extends StatelessWidget {
+  const Opcao({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -56,17 +59,17 @@ class Option extends StatelessWidget {
               width: double.infinity,
               child: Column(
                 children: [
-                  ///buttons container
+                  ///Container dos Botões
                   Container(
                     height: 191,
                     width: 318,
                     alignment: Alignment.center,
                     child: Row(
                       children: [
-                        ///ATARI
+                        ///Botão ATARI
                         SizedBox(
                           width: 129.0,
-                          height: 128.0,
+                          height: 158.0,
                           child: ElevatedButton(
                             onPressed: (){
                               Navigator.push(
@@ -90,10 +93,10 @@ class Option extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Padding(padding: EdgeInsets.only(left: 60)),
-                        ///NINTENDO
+                        Padding(padding: EdgeInsets.only(left: 20)),
+                        ///Botão NINTENDO
                         SizedBox(
-                          width: 129.0,
+                          width: 165.0,
                           height: 128.0,
                           child: ElevatedButton(
                             onPressed: (){
@@ -113,7 +116,7 @@ class Option extends StatelessWidget {
                               "NINTENDO",
                               style: TextStyle(
                                   fontFamily: "Acme",
-                                  fontSize: 22,
+                                  fontSize: 28,
                                   color: Colors.white
                               ),
                             ),
@@ -128,9 +131,9 @@ class Option extends StatelessWidget {
                     alignment: Alignment.center,
                     child: Row(
                       children: [
-                        ///SEGA
+                        ///Botão SEGA
                         SizedBox(
-                          width: 129.0,
+                          width: 165.0,
                           height: 128.0,
                           child: ElevatedButton(
                             onPressed: (){
@@ -156,13 +159,13 @@ class Option extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Padding(padding: EdgeInsets.only(left: 50)),
-                        ///QUIZ!
+                        Padding(padding: EdgeInsets.only(left: 20)),
+                        ///Botão QUIZ!
                         SizedBox(
                           width: 129.0,
-                          height: 128.0,
+                          height: 158.0,
                           child: ElevatedButton(
-                            onPressed: (){},
+                            onPressed: () => context.read<AuthService>().logout(),
                             style: TextButton.styleFrom(
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20.0)
@@ -184,6 +187,29 @@ class Option extends StatelessWidget {
                     ),
                   ),
                 ],
+              ),
+            ),
+            ///Botão DESLOGAR
+            SizedBox(
+              width: 115.0,
+              height: 70.0,
+              child: ElevatedButton(
+                onPressed: () => context.read<AuthService>().logout(),
+                style: TextButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.0)
+                  ),
+                  backgroundColor: Color(0xFFcfa163),
+                  elevation: 15,
+                ),
+                child: Text(
+                  "SAIR",
+                  style: TextStyle(
+                      fontFamily: "Acme",
+                      fontSize: 36,
+                      color: Colors.white
+                  ),
+                ),
               ),
             ),
             Padding(padding: EdgeInsets.only(top: 30)),

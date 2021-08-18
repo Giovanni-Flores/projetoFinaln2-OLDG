@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//Tela de Conteudo ATARI
 class Atari extends StatelessWidget {
   const Atari({Key? key}) : super(key: key);
 

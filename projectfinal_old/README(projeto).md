@@ -1,10 +1,11 @@
 # projectfinal_old
 
-A new Flutter application.
+Projeto Flutter - iniciado 11/08/2021
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+- Projeto iniciado em uma aplicação Flutter.
+- Somente "Giovanni Moreira Flores" codando no projeto, sem mais colaboradores/autores.
 
 A few resources to get you started if this is your first Flutter project:
 

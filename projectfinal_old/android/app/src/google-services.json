@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "698039353157",
+    "project_id": "oldg-app-aee20",
+    "storage_bucket": "oldg-app-aee20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:698039353157:android:4ff0f02044742d742d082c",
+        "android_client_info": {
+          "package_name": "com.projectfinal_old"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "698039353157-trub1b9ccgk9ba1lq2qifauctu9vutiv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAH_ScG3HsyIAN7VTn3Wx610_QdYou1_rg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "698039353157-trub1b9ccgk9ba1lq2qifauctu9vutiv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

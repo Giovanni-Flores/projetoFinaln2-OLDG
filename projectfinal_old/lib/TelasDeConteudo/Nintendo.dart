@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//Tela de Conteudo NINTENDO
 class Nintendo extends StatelessWidget {
   const Nintendo({Key? key}) : super(key: key);
 
