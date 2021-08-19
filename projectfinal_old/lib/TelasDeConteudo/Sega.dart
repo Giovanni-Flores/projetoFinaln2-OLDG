@@ -19,7 +19,8 @@ class Sega extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: <Widget>[
-                Padding(padding: EdgeInsets.only(top: 321)),
+                Image.asset("images/segaLogo.png"),
+                Padding(padding: EdgeInsets.only(bottom: 30)),
                 Container(
                   alignment: Alignment.center,
                   width: 337,

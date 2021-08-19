@@ -19,7 +19,8 @@ class Nintendo extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: <Widget>[
-                Padding(padding: EdgeInsets.only(top: 260)),
+                Image.asset("images/nintendoLogo.png"),
+                Padding(padding: EdgeInsets.only(bottom: 30)),
                 Container(
                   alignment: Alignment.center,
                   width: 337,

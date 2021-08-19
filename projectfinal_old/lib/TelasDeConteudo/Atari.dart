@@ -19,7 +19,8 @@ class Atari extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: <Widget>[
-                  Padding(padding: EdgeInsets.only(top: 300)),
+                  Image.asset("images/atariLogo.png"),
+                  Padding(padding: EdgeInsets.only(bottom: 40)),
                   Container(
                     alignment: Alignment.center,
                     width: 337,

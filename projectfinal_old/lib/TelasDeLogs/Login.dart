@@ -51,7 +51,8 @@ class _LoginState extends State<Login> {
           child: SingleChildScrollView(
             child: Column(
               children: <Widget>[
-                Padding(padding: EdgeInsets.only(top: 261, left: 32)),
+                Image.asset("images/loginLogo.png"),
+                Padding(padding: EdgeInsets.only(bottom: 40)),
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 30),
                   alignment: Alignment.center,

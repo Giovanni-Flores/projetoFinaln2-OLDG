@@ -165,7 +165,7 @@ class Opcao extends StatelessWidget {
                           width: 129.0,
                           height: 158.0,
                           child: ElevatedButton(
-                            onPressed: () => context.read<AuthService>().logout(),
+                            onPressed: () {},
                             style: TextButton.styleFrom(
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20.0)

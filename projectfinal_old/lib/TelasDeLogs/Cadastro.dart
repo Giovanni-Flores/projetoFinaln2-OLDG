@@ -22,7 +22,7 @@ class _CadastroState extends State<Cadastro> {
   bool senhaVisivel = false;
 
   //Estatdo da variável para cadastrar caso não tenha registro ainda
-  bool carrega = false; //loading para carrega ************
+  bool carrega = false;
 
   //Cadastrar usuário
   registrar() async {
@@ -41,6 +41,7 @@ class _CadastroState extends State<Cadastro> {
     return MaterialApp(
       home: Scaffold(
         body: Container(
+          height: 812,
           width: double.infinity,
           decoration: BoxDecoration(
             image: DecorationImage(
@@ -48,194 +49,197 @@ class _CadastroState extends State<Cadastro> {
               fit: BoxFit.cover,
             ),
           ),
-          child: Column(
-            children: <Widget>[
-              Padding(padding: EdgeInsets.only(top: 200, left: 32)),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 30),
-                alignment: Alignment.center,
-                height: 400,
-                width: 310,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                ///Início do Formulário de Cadastro
-                ///contendo 2 campos de texto tipo String sendo E-MAIl e SENHA
-                child: Form(
-                  key: formKey,
-                  child: Column(
-                    children: [
-                      ///Início do campo de -> E-mail
-                      Padding(padding: EdgeInsets.only(top: 20)),
-                      SizedBox(
-                        child: Row(
-                          children: [
-                            Icon(
-                                Icons.mail
-                            ),
-                            Padding(padding: EdgeInsets.only(left: 3)),
-                            Text(
-                              "E-mail:",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontFamily: "Acme",
-                                fontSize: 16,
+          child: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                Image.asset("images/cadastroLogo.png"),
+                Padding(padding: EdgeInsets.only(bottom: 30)),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 30),
+                  alignment: Alignment.center,
+                  height: 400,
+                  width: 310,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  ///Início do Formulário de Cadastro
+                  ///contendo 2 campos de texto tipo String sendo E-MAIl e SENHA
+                  child: Form(
+                    key: formKey,
+                    child: Column(
+                      children: [
+                        ///Início do campo de -> E-mail
+                        Padding(padding: EdgeInsets.only(top: 20)),
+                        SizedBox(
+                          child: Row(
+                            children: [
+                              Icon(
+                                  Icons.mail
                               ),
-                              textAlign: TextAlign.justify,
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(height: 8),
-                      ///Campo do E-mail e validação
-                      TextFormField(
-                        controller: email,
-                        keyboardType: TextInputType.emailAddress,
-                        validator: (value) {
-                          String pattern = r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
-                          RegExp regExp = new RegExp(pattern);
-                          if(value!.isEmpty) {
-                            return "Dígite seu E-mail:";
-                          } else if(!regExp.hasMatch(value)){
-                            return "Email inválido";
-                          } return null;
-                        },
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0xFF42FF00),
-                            ),
-                          ),
-                          filled: true,
-                          fillColor: Color(0xFF989898),
-                        ),
-                      ),
-                      ///Início do campo de -> Senha
-                      Padding(padding: EdgeInsets.only(top: 20)),
-                      SizedBox(height: 8),
-                      SizedBox(
-                        child: Row(
-                          children: [
-                            Icon(
-                                Icons.vpn_key
-                            ),
-                            Padding(padding: EdgeInsets.only(left: 7)),
-                            Text(
-                              "Senha:",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontFamily: "Acme",
-                                fontSize: 16,
+                              Padding(padding: EdgeInsets.only(left: 3)),
+                              Text(
+                                "E-mail:",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: "Acme",
+                                  fontSize: 16,
+                                ),
+                                textAlign: TextAlign.justify,
                               ),
-                              textAlign: TextAlign.justify,
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(height: 8),
-                      ///Campo de Senha e validação
-                      TextFormField(
-                        validator: (value) {
-                          if(value!.isEmpty) {
-                            return "Dígite sua senha!";
-                          } else if(value.length < 6) {
-                            return "Senha deve ter no mínimo 6 caracteres!";
-                          } return null;
-                        },
-                        controller: senha,
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0xFF42FF00),
-                            ),
-                          ),
-                          filled: true,
-                          fillColor: Color(0xFF989898),
-                          suffixIcon: IconButton(
-                            icon: senhaVisivel
-                                ? Icon(
-                                Icons.visibility,
-                                color: Colors.white
-                            )
-                                : Icon(
-                              Icons.visibility_off,
-                              color: Colors.white,
-                            ),
-                            onPressed: () =>
-                                setState(() => senhaVisivel = !senhaVisivel),
+                            ],
                           ),
                         ),
-                        obscureText: !senhaVisivel,
-                      ),
-                      ///Início do botão de -> Cadastrar
-                      Padding(padding: EdgeInsets.only(top: 20)),
-                      SizedBox(
-                        width: 123,
-                        height: 38,
-                        ///Botão para Confirmar Cadastro
-                        child: ElevatedButton(
-                          onPressed: () {
-                            if(formKey.currentState!.validate()) {
-                                registrar();
+                        SizedBox(height: 8),
+                        ///Campo do E-mail e validação
+                        TextFormField(
+                          controller: email,
+                          keyboardType: TextInputType.emailAddress,
+                          validator: (value) {
+                            String pattern = r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+                            RegExp regExp = new RegExp(pattern);
+                            if(value!.isEmpty) {
+                              return "Dígite seu E-mail:";
+                            } else if(!regExp.hasMatch(value)){
+                              return "Email inválido";
                             } return null;
                           },
-                          style: TextButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10.0)
-                            ),
-                            backgroundColor: Color(0xFF73E54B),
+                          style: TextStyle(
+                            color: Colors.white,
                           ),
-                          child: Text(
-                            "CONFIRMAR",
-                            style: TextStyle(
-                              fontFamily: "Acme",
-                              fontSize: 16,
-                              color: Colors.black
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0xFF42FF00),
+                              ),
                             ),
+                            filled: true,
+                            fillColor: Color(0xFF989898),
                           ),
                         ),
-                      ),
-                      SizedBox(height: 15),
-                      ///Botão para Voltar (context)
-                      SizedBox(
-                        width: 123,
-                        height: 38,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.pop(context);
+                        ///Início do campo de -> Senha
+                        Padding(padding: EdgeInsets.only(top: 20)),
+                        SizedBox(height: 8),
+                        SizedBox(
+                          child: Row(
+                            children: [
+                              Icon(
+                                  Icons.vpn_key
+                              ),
+                              Padding(padding: EdgeInsets.only(left: 7)),
+                              Text(
+                                "Senha:",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: "Acme",
+                                  fontSize: 16,
+                                ),
+                                textAlign: TextAlign.justify,
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 8),
+                        ///Campo de Senha e validação
+                        TextFormField(
+                          validator: (value) {
+                            if(value!.isEmpty) {
+                              return "Dígite sua senha!";
+                            } else if(value.length < 6) {
+                              return "Senha deve ter no mínimo 6 caracteres!";
+                            } return null;
                           },
-                          style: TextButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10.0)
-                            ),
-                            backgroundColor: Color(0xFFF64343),
+                          controller: senha,
+                          style: TextStyle(
+                            color: Colors.white,
                           ),
-                          child: Text(
-                            "VOLTAR",
-                            style: TextStyle(
-                                fontFamily: "Acme",
-                                fontSize: 16,
-                                color: Colors.black
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0xFF42FF00),
+                              ),
+                            ),
+                            filled: true,
+                            fillColor: Color(0xFF989898),
+                            suffixIcon: IconButton(
+                              icon: senhaVisivel
+                                  ? Icon(
+                                  Icons.visibility,
+                                  color: Colors.white
+                              )
+                                  : Icon(
+                                Icons.visibility_off,
+                                color: Colors.white,
+                              ),
+                              onPressed: () =>
+                                  setState(() => senhaVisivel = !senhaVisivel),
+                            ),
+                          ),
+                          obscureText: !senhaVisivel,
+                        ),
+                        ///Início do botão de -> Cadastrar
+                        Padding(padding: EdgeInsets.only(top: 20)),
+                        SizedBox(
+                          width: 123,
+                          height: 38,
+                          ///Botão para Confirmar Cadastro
+                          child: ElevatedButton(
+                            onPressed: () {
+                              if(formKey.currentState!.validate()) {
+                                registrar();
+                              } return null;
+                            },
+                            style: TextButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10.0)
+                              ),
+                              backgroundColor: Color(0xFF73E54B),
+                            ),
+                            child: Text(
+                              "CONFIRMAR",
+                              style: TextStyle(
+                                  fontFamily: "Acme",
+                                  fontSize: 16,
+                                  color: Colors.black
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                        SizedBox(height: 15),
+                        ///Botão para Voltar (context)
+                        SizedBox(
+                          width: 123,
+                          height: 38,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            style: TextButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10.0)
+                              ),
+                              backgroundColor: Color(0xFFF64343),
+                            ),
+                            child: Text(
+                              "VOLTAR",
+                              style: TextStyle(
+                                  fontFamily: "Acme",
+                                  fontSize: 16,
+                                  color: Colors.black
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
 
-              ),
-            ],
+                ),
+              ],
+            ),
           ),
         ),
 
