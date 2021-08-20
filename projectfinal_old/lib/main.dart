@@ -1,13 +1,16 @@
+// @dart=2.7
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'IniciaApp.dart';
+import 'StartApp .dart';
 
-//Tela inicial cuja função é apenas carregar o app
-// e logo após direcionar para outra tela onde o Firebase será inicializado
+//Initial screen whose function is to just load the app
+// and right after directing to another screen where Firebase will be started
 
-void main() => runApp(MaterialApp(
-  home: HomeScreen(),
-));
+void main() => runApp(
+  MaterialApp(
+    home: HomeScreen(),
+  ),
+);
 
 class HomeScreen extends StatefulWidget {
 
@@ -23,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
 
     Timer(Duration(seconds:3),(){
-      IniciaApp();
+      StartApp();
     });
   }
 
@@ -45,6 +48,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
-
-

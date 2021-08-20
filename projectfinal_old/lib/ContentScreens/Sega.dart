@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-//Tela de Conteudo SEGA
+//SEGA Content Screen
 class Sega extends StatelessWidget {
   const Sega({Key? key}) : super(key: key);
 
@@ -20,20 +20,20 @@ class Sega extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 Image.asset("images/segaLogo.png"),
-                Padding(padding: EdgeInsets.only(bottom: 30)),
+                Padding(padding: EdgeInsets.only(bottom: 30.0)),
                 Container(
                   alignment: Alignment.center,
-                  width: 337,
-                  height: 653,
+                  width: 337.0,
+                  height: 653.0,
                   decoration: BoxDecoration(
                     color: Color(0xFF010C0D).withOpacity(0.5),
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                   child: Column(
                     children: [
-                      Padding(padding: EdgeInsets.only(top: 40, bottom: 10, left: 10, right: 10),
+                      Padding(padding: EdgeInsets.only(top: 40.0, bottom: 10.0, left: 10.0, right: 10.0),
                       child: Text(
-                        "       A SEGA foi registrada em 1952 em Tóquio, no Japão. Famosa por criar fliperamas, em 1985 a companhia se popularizou no mundo dos consoles ao lançar o Master System. Apenas um ano depois, a SEGA apresentou ao mundo o videogame Mega Drive, que dominou o mercado europeu e americano a partir do protagonista Sonic, o porco-espinho veloz que estrelou jogos clássicos, como Sonic the Hedgehog.",
+                          "       SEGA was registered in 1952 in Tokyo, Japan. Famous for creating arcades, in 1985 the company became popular in the world of consoles by launching the Master System. Just a year later, SEGA introduced the world to the Mega Drive video game, which dominated the European and American market from the protagonist Sonic, the fast-moving hedgehog who starred in classic games like Sonic the Hedgehog.",
                         style: TextStyle(
                             fontFamily: "Acme",
                             fontSize: 16,
@@ -42,9 +42,9 @@ class Sega extends StatelessWidget {
                         textAlign: TextAlign.justify,
                         ),
                       ),
-                      Padding(padding: EdgeInsets.all(10),
+                      Padding(padding: EdgeInsets.all(10.0),
                         child: Text(
-                          "       Depois do sucesso do Mega Drive, a SEGA inovou introduzindo um console com suporte a CDS, o SEGA CD. Pouco tempo depois, a companhia lançou para o mercado o SEGA Saturn e, em 1988, o DREAMCAST. Em 2001, a empresa deixou de fabricar consoles e passou a investir no desenvolvimento de softwares, incluindo games para a Sony, Nintendo e Microsoft.",
+                            "       After the success of the Mega Drive, SEGA innovated by introducing a console with CDS support, the SEGA CD. Shortly thereafter, the company launched the SEGA Saturn to the market and, in 1988, the DREAMCAST. from manufacturing consoles and began investing in software development, including games for Sony, Nintendo and Microsoft.",
                           style: TextStyle(
                               fontFamily: "Acme",
                               fontSize: 16,
@@ -53,9 +53,9 @@ class Sega extends StatelessWidget {
                           textAlign: TextAlign.justify,
                         ),
                       ),
-                      Padding(padding: EdgeInsets.all(10),
+                      Padding(padding: EdgeInsets.all(10.0),
                         child: Text(
-                          "       Para reacender o interesse do público, em 2017 a companhia criou o projeto SEGA Forever, relançando jogos do Master System e Mega Drive para smartphones. Entre eles estão Sonic the Hedgehog, Golden Axe, Comix Zone, Altered Beast e Streets of Rage. Além disso, a SEGA iniciou um programa para relançar os consoles populares dos anos 1980 e 1990.",
+                            "       To rekindle public interest, in 2017 the company created the SEGA Forever project, relaunching Master System and Mega Drive games for smartphones. Among them are Sonic the Hedgehog, Golden Axe, Comix Zone, Altered Beast and Streets of Rage. Furthermore, SEGA started a program to relaunch the popular consoles of the 1980s and 1990s.",
                           style: TextStyle(
                               fontFamily: "Acme",
                               fontSize: 16,
@@ -68,10 +68,10 @@ class Sega extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                    padding: EdgeInsets.only(top: 20, bottom: 20),
+                    padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
                 child: SizedBox(
-                  width: 143,
-                  height: 48,
+                  width: 143.0,
+                  height: 48.0,
                   child: ElevatedButton(
                     onPressed: (){
                       Navigator.pop(context);
@@ -81,10 +81,10 @@ class Sega extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10.0)
                         ),
                         backgroundColor: Color(0xFF000E31),
-                        elevation: 15,
+                        elevation: 15.0,
                     ),
                     child: Text(
-                      "VOLTAR",
+                      "COME BACK",
                       style: TextStyle(
                           fontFamily: "Acme",
                           fontSize: 20,

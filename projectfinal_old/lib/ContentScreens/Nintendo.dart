@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-//Tela de Conteudo NINTENDO
+//NINTENDO Content Screen
 class Nintendo extends StatelessWidget {
   const Nintendo({Key? key}) : super(key: key);
 
@@ -20,20 +20,20 @@ class Nintendo extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 Image.asset("images/nintendoLogo.png"),
-                Padding(padding: EdgeInsets.only(bottom: 30)),
+                Padding(padding: EdgeInsets.only(bottom: 30.0)),
                 Container(
                   alignment: Alignment.center,
-                  width: 337,
-                  height: 553,
+                  width: 337.0,
+                  height: 553.0,
                   decoration: BoxDecoration(
                     color: Color(0xFF664506).withOpacity(0.5),
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                   child: Column(
                     children: [
-                      Padding(padding: EdgeInsets.only(top: 40, bottom: 10, left: 10, right: 10),
+                      Padding(padding: EdgeInsets.only(top: 40.0, bottom: 10.0, left: 10.0, right: 10.0),
                         child: Text(
-                          "       A Nintendo foi fundada no dia 23 de setembro de 1889 por Fusajiro Yamauchi em Kyoto, no Japão, como fabricante de um jogo de cartas chamado Hanafuda. Em 1969, o herdeiro da companhia, Hiroshi Yamauchi, decidiu expandir o campo de atuação da Nintendo, introduzindo-a no ramo dos jogos.",
+                            "       Nintendo was founded on September 23, 1889 by Fusajiro Yamauchi in Kyoto, Japan, as the manufacturer of a card game called Hanafuda. In 1969, the company's heir, Hiroshi Yamauchi, decided to expand Nintendo's field of action. , introducing her to the gaming business.",
                           style: TextStyle(
                               fontFamily: "Acme",
                               fontSize: 16,
@@ -42,9 +42,9 @@ class Nintendo extends StatelessWidget {
                           textAlign: TextAlign.justify,
                         ),
                       ),
-                      Padding(padding: EdgeInsets.all(10),
+                      Padding(padding: EdgeInsets.all(10.0),
                         child: Text(
-                          "       Na década de 1970 a Nintendo entrou oficialmente para o mercado dos games, mas foi somente nos anos 1980 que a empresa chefiada por Yamauchi se consolidou no setor, após sua chegada aos Estados Unidos.",
+                          "       In the 1970s, Nintendo officially entered the gaming market, but it was only in the 1980s that the company headed by Yamauchi consolidated itself in the sector, after its arrival in the United States.",
                           style: TextStyle(
                               fontFamily: "Acme",
                               fontSize: 16,
@@ -53,9 +53,9 @@ class Nintendo extends StatelessWidget {
                           textAlign: TextAlign.justify,
                         ),
                       ),
-                      Padding(padding: EdgeInsets.all(10),
+                      Padding(padding: EdgeInsets.all(10.0),
                         child: Text(
-                          "       Especializada no desenvolvimento de consoles e jogos eletrônicos, a Nintendo se destacou pelo sucesso de videogames como NES (Nintendo Entertainment System), Super Nintendo, Nintendo 64, Nintendo Wii, 3DS, entre outros. Além dos aparelhos, a Nintendo também foi responsável pela criação de jogos clássicos como 'Donkey Kong', 'Super Mario Bros' e 'Zelda'.",
+                            "       Specialized in the development of consoles and electronic games, Nintendo stood out for the success of video games such as NES (Nintendo Entertainment System), Super Nintendo, Nintendo 64, Nintendo Wii, 3DS, among others. In addition to the devices, Nintendo was also responsible for creation of classic games like 'Donkey Kong', 'Super Mario Bros' and 'Zelda'.",
                           style: TextStyle(
                               fontFamily: "Acme",
                               fontSize: 16,
@@ -68,10 +68,10 @@ class Nintendo extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                    padding: EdgeInsets.only(top: 20, bottom: 20),
+                    padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
                     child: SizedBox(
-                      width: 143,
-                      height: 48,
+                      width: 143.0,
+                      height: 48.0,
                       child: ElevatedButton(
                         onPressed: (){
                           Navigator.pop(context);
@@ -81,10 +81,10 @@ class Nintendo extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(10.0)
                             ),
                             backgroundColor: Color(0xFFC33B00),
-                            elevation: 15,
+                            elevation: 15.0,
                         ),
                         child: Text(
-                          "VOLTAR",
+                          "COME BACK",
                           style: TextStyle(
                               fontFamily: "Acme",
                               fontSize: 20,

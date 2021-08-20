@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:projectfinal_old/TelasDeConteudo//Opcao.dart';
-import 'package:projectfinal_old/TelasAuth/auth_services.dart';
+import 'package:projectfinal_old/ContentScreens/Navigation.dart';
+import 'package:projectfinal_old/LogsScreen/Login.dart';
 import 'package:provider/provider.dart';
-import '../TelasDeLogs/Login.dart';
+import 'auth_services.dart';
 
 class AuthCheck extends StatefulWidget {
   AuthCheck({Key? key}) : super(key: key);
@@ -13,16 +13,16 @@ class AuthCheck extends StatefulWidget {
 
 class _AuthCheckState extends State<AuthCheck> {
 
-  //Tela que iniciará o app e decidira se necessita de cadastro
-  // ou já está logado no app
+  //Screen that will start the app and decide if you need to register
+  // or is already logged into the app
 
   @override
   Widget build(BuildContext context) {
     AuthService auth = Provider.of<AuthService>(context);
 
-    if (auth.usuario == null)
+    if (auth.object == null)
       return Login();
     else
-      return Opcao();
+      return Navigation();
   }
 }

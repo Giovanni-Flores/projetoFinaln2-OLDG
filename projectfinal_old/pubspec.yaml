@@ -1,5 +1,6 @@
 name: projectfinal_old
-description: Textos sobre jogos e marcas antigas que fizeram parte do início do mundo gamer.
+description: Texts about games and old brands that were part of the beginning of the gaming world.
+
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -35,9 +36,6 @@ dependencies:
   # to handle SVGs for Android, iOS, and Web
   flutter_svg: ^0.21.0+1
 
-  # state management, intelligent dependency injection, and route management
-  get: ^4.1.4
-
 
 dev_dependencies:
   flutter_test:
@@ -71,8 +69,9 @@ flutter:
     - images/nintendoLogo.png
     - images/loginBackground.jpg
     - images/loginLogo.png
-    - images/cadastroBackground.jpg
-    - images/cadastroLogo.png
+    - images/registerBackground.jpg
+    - images/registerLogo.png
+    - images/pokemonBackground.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

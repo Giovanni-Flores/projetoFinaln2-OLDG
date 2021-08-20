@@ -1,83 +1,82 @@
 import 'package:flutter/material.dart';
-import 'package:projectfinal_old/TelasAuth/auth_check.dart';
-import 'package:projectfinal_old/TelasAuth/auth_services.dart';
+import 'package:projectfinal_old/AuthScreens/auth_services.dart';
 import 'package:provider/provider.dart';
+import 'Register.dart';
 
-class Cadastro extends StatefulWidget {
-  const Cadastro({Key? key}) : super(key: key);
+class Login extends StatefulWidget {
+  const Login({Key? key}) : super(key: key);
 
   @override
-  _CadastroState createState() => _CadastroState();
+  _LoginState createState() => _LoginState();
 }
 
-class _CadastroState extends State<Cadastro> {
+class _LoginState extends State<Login> {
 
   final formKey = GlobalKey<FormState>();
 
-  //Campos de preenchimento para pegar dados do usuário
+  //Fill fields to get user data
   final email = TextEditingController();
-  final senha = TextEditingController();
+  final password = TextEditingController();
 
-  //Variável que fará a senha ficar visível ao clicar em um botão
-  bool senhaVisivel = false;
+  //Check if the user's data match to login the page
+  bool loading = false;
 
-  //Estatdo da variável para cadastrar caso não tenha registro ainda
-  bool carrega = false;
+  //Variable that will make the password visible when clicking a button
+  bool visiblePassword = false;
 
-  //Cadastrar usuário
-  registrar() async {
-    setState(() => carrega = true);
+  //Log in user
+  login() async {
+    setState(() => loading = true);
     try {
-      await context.read<AuthService>().registrar(email.text, senha.text);
-      AlertShow(context);
+      await context.read<AuthService>().login(email.text, password.text);
     } on AuthException catch (e) {
-      setState(() => carrega = false);
+      setState(() => loading = false);
     }
   }
 
-  ///Início da tela de cadastro
+  //Top of Login Page
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         body: Container(
-          height: 812,
+          height: 860.0,
           width: double.infinity,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("images/cadastroBackground.jpg"),
+              image: AssetImage("images/loginBackground.jpg"),
               fit: BoxFit.cover,
             ),
           ),
           child: SingleChildScrollView(
             child: Column(
               children: <Widget>[
-                Image.asset("images/cadastroLogo.png"),
-                Padding(padding: EdgeInsets.only(bottom: 30)),
+                Image.asset("images/loginLogo.png"),
+                Padding(padding: EdgeInsets.only(bottom: 40.0)),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 30),
+                  padding: EdgeInsets.symmetric(horizontal: 30.0),
                   alignment: Alignment.center,
-                  height: 400,
-                  width: 310,
+                  width: 310.0,
+                  height: 395.0,
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
-                  ///Início do Formulário de Cadastro
-                  ///contendo 2 campos de texto tipo String sendo E-MAIl e SENHA
+                  //Start of Login Form
+                  //containing 2 String type text fields being E-MAIL and PASSWORD
                   child: Form(
                     key: formKey,
                     child: Column(
                       children: [
-                        ///Início do campo de -> E-mail
-                        Padding(padding: EdgeInsets.only(top: 20)),
+                        Padding(padding: EdgeInsets.only(top: 20.0)),
+                        //Start of field from -> E-mail
                         SizedBox(
                           child: Row(
                             children: [
                               Icon(
-                                  Icons.mail
+                                  Icons.person
                               ),
-                              Padding(padding: EdgeInsets.only(left: 3)),
+                              Padding(padding: EdgeInsets.only(left: 3.0)),
                               Text(
                                 "E-mail:",
                                 style: TextStyle(
@@ -90,20 +89,20 @@ class _CadastroState extends State<Cadastro> {
                             ],
                           ),
                         ),
-                        SizedBox(height: 8),
-                        ///Campo do E-mail e validação
+                        SizedBox(height: 8.0),
+                        //E-mail field and validation
                         TextFormField(
                           controller: email,
                           keyboardType: TextInputType.emailAddress,
-                          validator: (value) {
-                            String pattern = r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
-                            RegExp regExp = new RegExp(pattern);
-                            if(value!.isEmpty) {
-                              return "Dígite seu E-mail:";
-                            } else if(!regExp.hasMatch(value)){
-                              return "Email inválido";
-                            } return null;
-                          },
+                            validator: (value) {
+                              String pattern = r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+                              RegExp regExp = new RegExp(pattern);
+                              if(value!.isEmpty) {
+                                return "Type your e-mail";
+                              } else if(!regExp.hasMatch(value)){
+                                return "Invalid e-mail!";
+                              } return null;
+                            },
                           style: TextStyle(
                             color: Colors.white,
                           ),
@@ -118,18 +117,17 @@ class _CadastroState extends State<Cadastro> {
                             fillColor: Color(0xFF989898),
                           ),
                         ),
-                        ///Início do campo de -> Senha
-                        Padding(padding: EdgeInsets.only(top: 20)),
-                        SizedBox(height: 8),
+                        Padding(padding: EdgeInsets.only(top: 20.0)),
+                        //Start of -> Password field
                         SizedBox(
                           child: Row(
                             children: [
                               Icon(
                                   Icons.vpn_key
                               ),
-                              Padding(padding: EdgeInsets.only(left: 7)),
+                              Padding(padding: EdgeInsets.only(left: 7.0)),
                               Text(
-                                "Senha:",
+                                "Password:",
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontFamily: "Acme",
@@ -140,17 +138,17 @@ class _CadastroState extends State<Cadastro> {
                             ],
                           ),
                         ),
-                        SizedBox(height: 8),
-                        ///Campo de Senha e validação
+                        SizedBox(height: 8.0),
+                        //Password and validation field
                         TextFormField(
+                          controller: password,
                           validator: (value) {
                             if(value!.isEmpty) {
-                              return "Dígite sua senha!";
-                            } else if(value.length < 6) {
-                              return "Senha deve ter no mínimo 6 caracteres!";
+                              return "Inform your password!";
+                            } else if(value.length < 6.0) {
+                              return "Password must be at least 6 characters!";
                             } return null;
                           },
-                          controller: senha,
                           style: TextStyle(
                             color: Colors.white,
                           ),
@@ -165,7 +163,7 @@ class _CadastroState extends State<Cadastro> {
                             filled: true,
                             fillColor: Color(0xFF989898),
                             suffixIcon: IconButton(
-                              icon: senhaVisivel
+                              icon: visiblePassword
                                   ? Icon(
                                   Icons.visibility,
                                   color: Colors.white
@@ -175,23 +173,22 @@ class _CadastroState extends State<Cadastro> {
                                 color: Colors.white,
                               ),
                               onPressed: () =>
-                                  setState(() => senhaVisivel = !senhaVisivel),
+                                  setState(() => visiblePassword = !visiblePassword),
                             ),
                           ),
-                          obscureText: !senhaVisivel,
+                          obscureText: !visiblePassword,
                         ),
-                        ///Início do botão de -> Cadastrar
-                        Padding(padding: EdgeInsets.only(top: 20)),
+                        //LOGIN button
+                        Padding(padding: EdgeInsets.only(top: 25.0)),
                         SizedBox(
-                          width: 123,
-                          height: 38,
-                          ///Botão para Confirmar Cadastro
+                          width: 123.0,
+                          height: 38.0,
                           child: ElevatedButton(
                             onPressed: () {
                               if(formKey.currentState!.validate()) {
-                                registrar();
-                              } return null;
-                            },
+                                  login();
+                                } return null;
+                              },
                             style: TextButton.styleFrom(
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10.0)
@@ -199,23 +196,27 @@ class _CadastroState extends State<Cadastro> {
                               backgroundColor: Color(0xFF73E54B),
                             ),
                             child: Text(
-                              "CONFIRMAR",
+                              "LOG IN",
                               style: TextStyle(
-                                  fontFamily: "Acme",
-                                  fontSize: 16,
-                                  color: Colors.black
+                                fontFamily: "Acme",
+                                fontSize: 16,
+                                color: Colors.black
                               ),
                             ),
                           ),
                         ),
-                        SizedBox(height: 15),
-                        ///Botão para Voltar (context)
+                        //REGISTER button (create new user)
+                        Padding(padding: EdgeInsets.only(top: 15.0)),
                         SizedBox(
-                          width: 123,
-                          height: 38,
+                          width: 123.0,
+                          height: 38.0,
                           child: ElevatedButton(
                             onPressed: () {
-                              Navigator.pop(context);
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Register()),
+                              );
                             },
                             style: TextButton.styleFrom(
                               shape: RoundedRectangleBorder(
@@ -224,11 +225,11 @@ class _CadastroState extends State<Cadastro> {
                               backgroundColor: Color(0xFFF64343),
                             ),
                             child: Text(
-                              "VOLTAR",
+                              "REGISTER",
                               style: TextStyle(
-                                  fontFamily: "Acme",
-                                  fontSize: 16,
-                                  color: Colors.black
+                                fontFamily: "Acme",
+                                fontSize: 16,
+                                color: Colors.black
                               ),
                             ),
                           ),
@@ -236,41 +237,12 @@ class _CadastroState extends State<Cadastro> {
                       ],
                     ),
                   ),
-
                 ),
               ],
             ),
           ),
         ),
-
       ),
     );
   }
-}
-
-  ///Alert Show
-  AlertShow(BuildContext context) {
-  Widget okButton = FlatButton(
-    child: Text("OK"),
-    onPressed: () {
-      Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => AuthCheck()));
-    },
-  );
-  // Texto que aparecerá no alert
-  AlertDialog alerta = AlertDialog(
-    title: Text("Cadastrado com sucesso!"),
-    content: Text("Agora é só aproveitar o App! :)"),
-    actions: [
-      okButton,
-    ],
-  );
-  // Exibe o dialog
-  showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      return alerta;
-    },
-  );
 }
