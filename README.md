@@ -229,3 +229,66 @@ Imagens adicionais serão usadas de acordo com o conteúdo e distribuição na t
 - Teste:  
 Será feito com o LightHouse para testar o desempenho geral do app que não será postado, e como estou desenvolvendo sozinho e com ideia para muitas telas o LightHouse dará um feedback mais rápido, fazendo com que eu ganhe um certo “tempo” para alterações no desempenho.
 
+___________________________________________________________________
+
+Etapa 7/8.
+
+___________________________________________________________________
+
+- Link Fluxograma: 
+https://lucid.app/lucidchart/invitations/accept/inv_a5ef5e16-f925-4081-bbd0-6ca22367d405
+
+![image](https://user-images.githubusercontent.com/66764596/130477762-54400b37-f5e9-4d11-b045-27b00d8668b1.png)
+
+- Mapa de navegação:  (em desenvolvimento) 
+https://miro.com/app/board/o9J_l3Zh56I=/
+
+![image](https://user-images.githubusercontent.com/66764596/130477818-5f57bffa-3349-4f8d-b9fe-8273e43adc3e.png)
+
+- Tamanho das Imagens:
+
+	Imagens para fundo de tela baseada na proporção do IPHONE X (medidas do google):    			
+375x812 - background (7 imagens atualmente, 1 por tela)
+
+Imagens adicionais serão usadas de acordo com o conteúdo e distribuição na tela, como o design ainda está sendo elaborado, nem todas imagens têm tamanhos definidos. 
+144x142 - Pacman (Tela opção)	
+
+- Prévia de Telas:
+
+![image](https://user-images.githubusercontent.com/66764596/130477923-e4bbf1f9-ba1d-4d31-83b8-784b9fe8a6d0.png)
+
+
+- Teste:  
+Será feito com o LightHouse para testar o desempenho geral do app que não será postado, e como estou desenvolvendo sozinho e com ideia para muitas telas o LightHouse dará um feedback mais rápido, fazendo com que eu ganhe um certo “tempo” para alterações no desempenho.
+
+___________________________________________________________________
+
+Etapa 9.
+___________________________________________________________________
+
+- Link Fluxograma:  (finalizado)
+https://lucid.app/lucidchart/invitations/accept/inv_a5ef5e16-f925-4081-bbd0-6ca22367d405
+
+![image](https://user-images.githubusercontent.com/66764596/130477990-cb4bfffd-ad7e-4043-9991-8b795c8ca9c3.png)
+
+- Mapa de navegação:  (finalizado)
+https://miro.com/app/board/o9J_l3Zh56I=/
+
+![image](https://user-images.githubusercontent.com/66764596/130478036-1982c4e1-d18d-499c-b255-bc0f565ce4dd.png)
+
+Tamanho das Imagens:
+
+	Imagens para fundo de tela baseada na proporção do IPHONE X (medidas do google):    			
+375x812 - background (7 imagens atualmente, 1 por tela)
+
+Imagens adicionais serão usadas de acordo com o conteúdo e distribuição na tela, como o design ainda está sendo elaborado, nem todas imagens têm tamanhos definidos. 
+144x142 - Pacman (Tela opção)	
+
+- Prévia de Telas: (finalizado)
+
+![image](https://user-images.githubusercontent.com/66764596/130478342-668e9f26-fa83-4e7f-ab41-0a3ccd8d025e.png)
+
+Teste:  
+Será feito com o CodeLabs para testar o desempenho geral do app que não será postado, e como estou desenvolvendo sozinho e com ideia para muitas telas o CodeLabs dará um feedback mais rápido, fazendo com que eu ganhe um certo “tempo” para alterações no desempenho. O app está sendo desenvolvido no emulador de Iphone X.
+
+
